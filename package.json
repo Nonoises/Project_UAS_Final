@@ -1,0 +1,26 @@
+{
+  "name": "praktek",
+  "version": "1.0.0",
+  "description": "praktek 12",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "sequelize",
+    "ejs"
+  ],
+  "type": "module",
+  "author": "raja satria",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.2",
+    "express-session": "^1.17.2",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.13.0"
+  }
+}

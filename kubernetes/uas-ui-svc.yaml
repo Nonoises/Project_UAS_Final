@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: uas-ui-svc
+  labels: 
+    group: database
+spec:
+  type: LoadBalancer
+  selector:
+    app: uas-ui
+    env: blue
+  ports:
+    - port: 3001
+      targetPort: 3001

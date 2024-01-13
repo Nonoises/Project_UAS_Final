@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: adminer
+  labels:
+    app: adminer
+    group: database
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: adminer  
+  template:
+    metadata:        
+      labels:
+        app: adminer
+        group: database
+    spec:
+      containers:    
+        - name: adminer
+          image: adminer:4
+          ports:
+            - containerPort: 8080  
+          env:
+            - name: ADMINER_DEFAULT_SERVER
+              value: db
+          resources:
+            limits:
+              memory: "256Mi"
+              cpu: "500m" 

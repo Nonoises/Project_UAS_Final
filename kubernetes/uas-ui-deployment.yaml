@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: uas-ui-main
+  labels:
+    app: uas-ui
+    group: database
+    env: blue
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: uas-ui
+      env: blue
+
+  template:
+    metadata:
+      labels:
+        app: uas-ui
+        group: database
+        env: blue
+
+    spec:
+      containers:
+        - name: uas-ui
+          image: theequators/project_uas:latest
+          ports:
+            - containerPort: 3001
+          envFrom:
+            - configMapRef:
+                name: mysql-config
+          env:
+            - name: DB_SERVER
+              value: db
+          resources:
+            limits:
+              memory: "256Mi"
+              cpu: "500m"

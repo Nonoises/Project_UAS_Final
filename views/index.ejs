@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WELCOME!</title>
+    <link rel="stylesheet" href="https://www.unpkg.com/bulma@0.9.3/css/bulma.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar is-info" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="/">
+                    My Web
+                </a>
+                    <% if (user) { %>
+                        <a class="navbar-item" href="/admin/nilai">
+                            Nilai
+                        </a>
+                    <% } %>
+                        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                            <span aria-hidden="true"></span>
+                            <span aria-hidden="true"></span>
+                            <span aria-hidden="true"></span>
+                        </a>
+            </div>
+            <div class="navbar-menu">
+                <div class="navbar-end">
+                    <div class="navbar-item">
+                        <div class="mx-3">
+                            <%= user.email %>
+                        </div>
+                        <div class="buttons">
+                            <%- (!user?'<a href="/login" class="button is-light">Login</a>':'<a href="/logout" class="button is-light">Logout</a>') %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div id="app" class="container is-max-desktop">
+        <div class="columns mt-5">
+            <div class="column is-10 is-offset-1">
+                <div class="columns featured-post is-multiline">
+                    <div class="column is-12 post">
+                        <article class="columns featured">
+                            <div class="column is-7 post-img ">
+                                <img src="https://th.bing.com/th/id/R.5b428905d6a8425afad7e568f51e0f6c?rik=aEFztBr2bac0WA&riu=http%3a%2f%2f1.bp.blogspot.com%2f-mX7KVyigdjo%2fUJaFkq78yOI%2fAAAAAAAAABY%2fU7_KoyfTbvQ%2fs1600%2fLogoMikroskil.png&ehk=E%2fxRFwtbb8Q%2fxxoCD3zFBPVXVz0eUR5pEHmDCg8tjQw%3d&risl=&pid=ImgRaw&r=0" alt="">
+                            </div>
+                            <div class="column is-5 featured-content va">
+                                <div>
+                                    <h1 class="title post-title">Selamat Datang di Website Pengecekkan Nilai</h1>
+                                    <p class="post-excerpt has-text-justified">Website ini
+                                        berguna untuk memeriksa hasil ujian murid-murid
+                                    <br>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
